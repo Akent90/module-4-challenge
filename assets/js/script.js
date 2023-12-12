@@ -109,3 +109,27 @@ function startTimer() {
         }
     }, 1000);
 }
+
+function setNextQuestion() {
+    resetState();
+    showQuestion(questions[currentQuestionIndex]);
+}
+
+function resetState() {
+    answerButtonsElement.innerHTML = '';
+}
+
+function showQuestion(question) {
+    questionElement.innerText = question.question;
+    question.answers.forEach(function(answer, index) {
+        var button = document.createElement('button');
+        button.innerText = answer;
+        button.classList.add('btn');
+        if (index === question.correct) {
+            button.dataset.correct = true;
+        }
+        button.addEventListener('click', selectAnswer);
+        answerButtonsElement.appendChild(button);
+    });
+}
+
