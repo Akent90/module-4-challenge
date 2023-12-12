@@ -82,3 +82,8 @@ questions = [
         "Event handling",
     ], correct: 1 },
 ];
+
+startButton.addEventListener('click', startGame);
+initialsForm.addEventListener('submit', saveHighScore);
+goBackButton.addEventListener('click', goBack);
+clearScoresButton.addEventListener('click', clearHighScores);
