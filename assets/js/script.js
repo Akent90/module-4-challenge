@@ -87,3 +87,13 @@ startButton.addEventListener('click', startGame);
 initialsForm.addEventListener('submit', saveHighScore);
 goBackButton.addEventListener('click', goBack);
 clearScoresButton.addEventListener('click', clearHighScores);
+
+function startGame() {
+    score = 0;
+    currentQuestionIndex = 0;
+    startButton.classList.add('hidden');
+    questionContainer.classList.remove('hidden');
+    timer = 60;
+    startTimer();
+    setNextQuestion();
+}
