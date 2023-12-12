@@ -97,3 +97,15 @@ function startGame() {
     startTimer();
     setNextQuestion();
 }
+
+function startTimer() {
+    timerElement.innerText = timer;
+    var timerInterval = setInterval(function(){
+        timer--;
+        timerElement.innerText = timer;
+        if (timer <= 0 || currentQuestionIndex >= questions.length) {
+            clearInterval(timerInterval);
+            endQuiz();
+        }
+    }, 1000);
+}
