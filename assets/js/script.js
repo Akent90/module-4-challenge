@@ -173,3 +173,15 @@ function showHighScores() {
     var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
     scoreList.innerHTML = highScores.map(function(score) { return '<li>' + score.initials + ' - ' + score.score + '</li>';}).join('');
 }
+
+function goBack() {
+    highScoresScreen.classList.add('hidden');
+    startButton.classList.remove('hidden');
+}
+
+function clearHighSchores() {
+    localStorage.removeItem('highScores');
+    scoreList.innerHTML = '';
+}
+
+startGame();
