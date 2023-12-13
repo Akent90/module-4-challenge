@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a web-based timed coding quiz designed to test knowledge on JavaScript fundamentals. It features a series of multiple-choice questions, a countdown timer, and the ability to save high scores for comparing performance with peers.
+This project is a web-based timed coding quiz designed to test knowledge on basic programming fundamentals. It features a series of multiple-choice questions, a countdown timer, and the ability to save high scores for comparing performance with peers.
 
 ## Features
 
@@ -35,6 +35,12 @@ Working with Local Storage: [Stack Overflow: Retrieve local storage array](https
 Mapping Objects for HTML Manipulation: Stack Overflow: [Mapping an object and setting innerHTML](https://stackoverflow.com/questions/44062723/mapping-an-object-and-then-setting-innerhtml-on-the-page-results-in-commas-betwe)
 
 Understanding the join() method: [MDN Web Docs: Array.prototype.join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+
+## Deployed App and Link
+
+Here's a look at the deployed application:
+
+![App Screenshot](assets/images/deployedapp.png)
 
 ## License
 
