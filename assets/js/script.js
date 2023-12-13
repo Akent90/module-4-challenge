@@ -133,3 +133,25 @@ function showQuestion(question) {
     });
 }
 
+function selectAnswer() {
+    var selectedButton = this;
+    var correct = selectedButton.dataset.correct;
+    if (!correct) {
+        timer -= 10; 
+    } else {
+        score++;
+    }
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        setNextQuestion();
+    
+    } else {
+        endQuiz();
+    }
+}
+
+function endQuiz() {
+    questionContainer.classList.add('hidden');
+    endScreen.classList.renove('hidden');
+    finalScoreElement.innerText = score;
+}
