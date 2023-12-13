@@ -93,7 +93,7 @@ function startGame() {
     currentQuestionIndex = 0;
     startButton.classList.add('hidden');
     questionContainer.classList.remove('hidden');
-    timer = 60;
+    timer = 120;
     startTimer();
     setNextQuestion();
 }
