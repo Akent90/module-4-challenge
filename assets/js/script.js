@@ -155,3 +155,15 @@ function endQuiz() {
     endScreen.classList.renove('hidden');
     finalScoreElement.innerText = score;
 }
+
+function saveHighScore(e) {
+    e.preventDefault();
+    var initials = initialsForm.initials.value;
+    var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+    var newScore = { score: score, initials: initials };
+    highScores.push(newScore);
+    highScores.sort(function(a, b) { return b.score - a.score; });
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+    showHighScores();
+}
+ 
