@@ -167,3 +167,9 @@ function saveHighScore(e) {
     showHighScores();
 }
  
+function showHighScores() {
+    endScreen.classList.add('hidden');
+    highScoresScreen.classList.remove('hidden');
+    var highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+    scoreList.innerHTML = highScores.map(function(score) { return '<li>' + score.initials + ' - ' + score.score + '</li>';}).join('');
+}
