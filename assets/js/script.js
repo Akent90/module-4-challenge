@@ -100,7 +100,7 @@ function startGame() {
 
 function startTimer() {
     timerElement.innerText = timer;
-    var timerInterval = setInterval(function(){
+    var timerInterval = setInterval(() => {
         timer--;
         timerElement.innerText = timer;
         if (timer <= 0 || currentQuestionIndex >= questions.length) {
