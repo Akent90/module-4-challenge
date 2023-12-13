@@ -2,12 +2,15 @@ var startButton = document.getElementById('start-btn');
 var questionContainer = document.getElementById('quiz-screen');
 var questionElement = document.getElementById('question');
 var answerButtonsElement = document.getElementById('answer-buttons');
-var timerElement = document.getElementById('end-screen');
+var timerElement = document.getElementById('time-left');
 var finalScoreElement = document.getElementById('final-score');
 var initialsForm = document.getElementById('score-form');
 var highScoresScreen = document.getElementById('high-scores');
-var scoreList = document.getElementById("go-back");
+var scoreList = document.getElementById("high-score-list");
 var clearScoresButton = document.getElementById('clear-scores');
+var goBackButton = document.getElementById('go-back');
+var startScreen = document.getElementById('start-screen');
+var endScreen = document.getElementById('end-screen');
 
 var currentQuestionIndex, questions, timer, score;
 
@@ -88,6 +91,8 @@ initialsForm.addEventListener('submit', saveHighScore);
 goBackButton.addEventListener('click', goBack);
 clearScoresButton.addEventListener('click', clearHighScores);
 
+
+
 function startGame() {
     score = 0;
     currentQuestionIndex = 0;
@@ -152,7 +157,7 @@ function selectAnswer() {
 
 function endQuiz() {
     questionContainer.classList.add('hidden');
-    endScreen.classList.renove('hidden');
+    document.getElementById('end-screen').classList.remove('hidden');
     finalScoreElement.innerText = score;
 }
 
@@ -174,12 +179,19 @@ function showHighScores() {
     scoreList.innerHTML = highScores.map(function(score) { return '<li>' + score.initials + ' - ' + score.score + '</li>';}).join('');
 }
 
+document.getElementById('view-high-scores').addEventListener('click', function(){
+    startScreen.classList.add('hidden');
+    showHighScores();
+});
+
 function goBack() {
     highScoresScreen.classList.add('hidden');
+    document.getElementById('end-screen').classList.add('hidden');
     startButton.classList.remove('hidden');
+    startScreen.classList.remove('hidden');
 }
 
-function clearHighSchores() {
+function clearHighScores() {
     localStorage.removeItem('highScores');
     scoreList.innerHTML = '';
 }
