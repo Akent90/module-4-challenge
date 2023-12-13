@@ -195,5 +195,3 @@ function clearHighScores() {
     localStorage.removeItem('highScores');
     scoreList.innerHTML = '';
 }
-
-startGame();

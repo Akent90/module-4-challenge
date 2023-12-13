@@ -38,7 +38,7 @@ Understanding the join() method: [MDN Web Docs: Array.prototype.join()](https://
 
 ## Deployed App and Link
 
-Here's a look at the deployed application:
+Here's a look at the deployed application: https://akent90.github.io/module-4-challenge/
 
 ![App Screenshot](assets/images/deployedapp.png)
 
